@@ -15,15 +15,15 @@ function getComputerChoice() {
     let rand = Math.floor((Math.random() * 3));
 
     if (rand === 0) {
-        console.log('rock')
+        console.log('computer chose rock')
         return 'rock'
     }
     else if (rand === 1) {
-        console.log('paper')
+        console.log('computer chose paper')
         return 'paper'
     }
     else {
-        console.log('scissors')
+        console.log('computer chose scissors')
         return 'scissors'
     }
 }
@@ -45,41 +45,50 @@ function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase()
     if (humanChoice === 'rock') {
         if (computerChoice === 'rock') {
-            console.log("tie!")
+            const result = document.querySelector("#result")
+            result.textContent = "tie!"
         }
         else if(computerChoice === 'paper') {
-            console.log("you lose! paper beats rock.")
+            const result = document.querySelector("#result")
+            result.textContent = "you lose! paper beats rock."
             ++computerScore
         }
         else {
-            console.log("you win! rock beats scissors.")
+            const result = document.querySelector("#result")
+            result.textContent = "you win! rock beats scissors."
             ++humanScore
         }
     }
     else if (humanChoice === 'paper') {
         if (computerChoice === 'paper') {
-            console.log("tie!")
+            const result = document.querySelector("#result")
+            result.textContent = "tie!"
         }
         else if(computerChoice === 'rock') {
-            console.log("you win! paper beats rock.")
+            const result = document.querySelector("#result")
+            result.textContent = "you win! paper beats rock."
             ++humanScore
         }
         else {
-            console.log("you lose! scissors beats paper.")
+            const result = document.querySelector("#result")
+            result.textContent = "you lose! scissors beats paper."
             ++computerScore
         }
     }
     else {
         if (computerChoice === 'rock') {
-            console.log("you lose! rock beats scissors")
+            const result = document.querySelector("#result")
+            result.textContent = "you lose! rock beats scissors"
             ++computerScore
         }
         else if(computerChoice === 'paper') {
-            console.log("you win! scissors beats paper.")
+            const result = document.querySelector("#result")
+            result.textContent = "you win! scissors beats paper."
             ++humanScore
         }
         else {
-            console.log("tie!")
+            const result = document.querySelector("#result")
+            result.textContent = "tie!"
         }
     }
 }
