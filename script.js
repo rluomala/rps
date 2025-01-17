@@ -1,7 +1,14 @@
 let humanScore = 0
 let computerScore = 0
 
-playGame()
+const rock = document.querySelector("#rock");
+rock.onclick = () => playRound('rock', getComputerChoice());
+
+const paper = document.querySelector("#paper");
+paper.onclick = () => playRound('paper', getComputerChoice());
+
+const scissors = document.querySelector("#scissors");
+scissors.onclick = () => playRound('scissors', getComputerChoice());
 
 function getComputerChoice() {
 
